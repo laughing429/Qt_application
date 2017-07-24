@@ -23,6 +23,8 @@ class Ui_MainWindow(QtGui.QMainWindow):
         super(Ui_MainWindow, self).__init__()
         self.setupUi(self)
         self.retranslateUi(self)
+        self.setWindowTitle("modifyImgName")
+        self.setWindowIcon(QtGui.QIcon("icon.png"))
     
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("modify file name"))
@@ -72,10 +74,18 @@ class Ui_MainWindow(QtGui.QMainWindow):
         
         self.label = QtGui.QTextEdit(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(140, 260, 531, 71))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Yu Gothic UI Semibold"))
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
         self.label.setObjectName(_fromUtf8("label"))
+        
         self.img = QtGui.QLabel(self.centralwidget)
         self.img.setGeometry(QtCore.QRect(140, 40, 531, 161))
         self.img.setObjectName(_fromUtf8("img"))
+        
         self.img_label_2 = QtGui.QLabel(self.centralwidget)
         self.img_label_2.setGeometry(QtCore.QRect(60, 260, 81, 31))
         font = QtGui.QFont()
@@ -83,9 +93,9 @@ class Ui_MainWindow(QtGui.QMainWindow):
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        
         self.img_label_2.setFont(font)
         self.img_label_2.setObjectName(_fromUtf8("img_label_2"))
+        
         self.change = QtGui.QPushButton(self.centralwidget)
         self.change.setGeometry(QtCore.QRect(260, 350, 101, 41))
         font = QtGui.QFont()
