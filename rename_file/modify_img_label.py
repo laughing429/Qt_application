@@ -133,6 +133,8 @@ class Ui_MainWindow(QtGui.QMainWindow):
         name = unicode(name)
         ftype = os.path.splitext(self.pic)[1]
         os.rename(os.path.join(self.path, self.pic), os.path.join(self.path, name+ftype))
+        self.label.clear()
+        self.change_picture()
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
