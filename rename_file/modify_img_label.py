@@ -84,7 +84,7 @@ class Ui_MainWindow(QtGui.QMainWindow):
         font.setBold(True)
         font.setWeight(75)
         self.name.setFont(font)
-        self.name.setObjectName(_fromUtf8("label"))
+        self.name.setObjectName(_fromUtf8("name"))
         
         self.img_label_2 = QtGui.QLabel(self.centralwidget)
         self.img_label_2.setGeometry(QtCore.QRect(60, 260, 81, 31))
@@ -139,11 +139,11 @@ class Ui_MainWindow(QtGui.QMainWindow):
         self.img.setPixmap(QtGui.QPixmap(picture))
     
     def save(self):
-        name = self.label.toPlainText()
+        name = self.name.toPlainText()
         name = unicode(name)
         ftype = os.path.splitext(self.pic)[1]
         os.rename(os.path.join(self.path, self.pic), os.path.join(self.path, name+ftype))
-        self.label.clear()
+        self.name.clear()
         self.change_picture()
 
 if __name__ == '__main__':
